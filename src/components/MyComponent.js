@@ -2,43 +2,23 @@
 // function component
 
 import React from "react";
+import UserInfor from "./UserInfor";
+import DisplayInfor from "./DisplayInfor";
 
 class MyComponent extends React.Component {
 
-    state = {
-        name: `HarryPhamDev`,
-        address: `Hoi Dan IT`,
-        age: 26
-    }
-
-    handleClick(event) {
-        console.log(`>> click me my button`)
-
-        this.setState({
-            name: `Eric`,
-            age: Math.floor((Math.random() * 100) + 1),
-
-            // address: `Hoi Dan IT`,
-            // age: 26
-        })
-
-        // this.setState({
-        //     age: Math.floor((Math.random() * 100) + 1)
-        // })
-    }
-
-    handleOnMoverOver(event) {
-        console.log(event.pageX)
-    }
-
     //JSX
     render() {
+        const myInfor = [`ab`, `c`, `c`]
+
+
         return (
             <div>
-
-                My name is {this.state.name} and I'm  {this.state.age}
-                <button onMouseOver={this.handleOnMoverOver}>Hover me</button>
-                <button onClick={(event) => { this.handleClick(event) }}>Click me</button>
+                <UserInfor />
+                <br /><br />
+                <DisplayInfor name="Hoi Dan IT" age="30" />
+                <hr />
+                <DisplayInfor name="Eric" age={true} myInfor={myInfor} />
 
             </div>
         )
